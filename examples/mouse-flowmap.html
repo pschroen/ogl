@@ -49,7 +49,7 @@
 
                     // Use flow to adjust the uv lookup of a texture
                     vec2 uv = gl_FragCoord.xy / 600.0;
-                    uv += flow.xy * 0.05;
+                    uv -= flow.rg * 0.05;
                     vec3 tex = texture2D(tWater, uv).rgb;
 
                     // Oscillate between raw values and the affected texture above
