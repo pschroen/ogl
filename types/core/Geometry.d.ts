@@ -3,26 +3,26 @@ import { Vec3 } from '../math/Vec3.js';
 import type { OGLRenderingContext, RenderState } from './Renderer.js';
 import type { Program } from './Program.js';
 
-export type AttributeMap = Record<string, Partial<Attribute>>;
+export type AttributeMap = Record<string, Attribute>;
 
 export type AttributeData = Float32Array | Uint32Array | Uint16Array;
 
 export interface Attribute {
     data: AttributeData;
     size: number;
-    instanced: null | number | boolean;
+    instanced?: null | number | boolean;
     type: GLenum;
     normalized: boolean;
 
-    buffer: WebGLBuffer;
+    buffer?: WebGLBuffer;
     stride: number;
     offset: number;
-    count: number;
-    target: number;
-    id: number;
-    divisor: number;
-    needsUpdate: boolean;
-    usage: number;
+    count?: number;
+    target?: number;
+    id?: number;
+    divisor?: number;
+    needsUpdate?: boolean;
+    usage?: number;
 }
 
 export interface Bounds {
